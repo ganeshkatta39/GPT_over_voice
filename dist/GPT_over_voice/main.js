@@ -16,11 +16,21 @@ function speak(phrase) {
   utterThis.onend = () => {
     recognition.start();
   };
+  utterThis.onerror = (e) => {
+    console.log(e);
+  };
   utterThis.voice = voices[3];
   utterThis.pitch = 0.8;
   utterThis.rate = 1;
   synth.speak(utterThis);
 }
+
+// adding a button to have user interaction so that the app works
+const start_button = document.getElementById("start");
+start_button.addEventListener("click", () => {
+  recognition.start();
+  start_button.parentNode.removeChild(start_button);
+});
 
 // loding animation
 // Show the loading animation
@@ -76,5 +86,3 @@ recognition.addEventListener("end", () => {
     recognition.start();
   }
 });
-
-recognition.start();

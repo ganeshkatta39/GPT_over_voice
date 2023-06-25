@@ -81,37 +81,15 @@ section p {
   }
 }
 
-#sound-wave {
-  width: 200px;
-  height: 100px;
-  position: relative;
-  overflow: hidden;
+#start {
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
 }
 
-#sound-wave svg {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-#sound-wave path {
-  fill: none;
-  stroke: #3498db;
-  stroke-width: 2;
-  stroke-linecap: round;
-  animation: sound-wave-animation 1s infinite linear;
-}
-
-@keyframes sound-wave-animation {
-  0% {
-    d: path("M0,50");
-  }
-  50% {
-    d: path("M0,50 C25,80 75,20 100,50 C125,80 175,20 200,50");
-  }
-  100% {
-    d: path("M0,50");
-  }
+.button-container {
+  display: flex;
+  justify-content: center;
+  width: 100vw; /* Adjust this value to center vertically as well */
 }
