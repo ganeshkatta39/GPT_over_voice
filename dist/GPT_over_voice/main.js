@@ -1,6 +1,29 @@
+// adding the speak function for the GPT
+const synth = window.speechSynthesis;
+let voices = [];
+
+function populateVoiceList() {
+  voices = synth.getVoices();
+}
+
+populateVoiceList();
+if (speechSynthesis.onvoiceschanged !== undefined) {
+  speechSynthesis.onvoiceschanged = populateVoiceList;
+}
+
+function speak(phrase) {
+  const utterThis = new SpeechSynthesisUtterance(phrase);
+  utterThis.onend = () => {
+    recognition.start();
+  };
+  utterThis.voice = voices[3];
+  utterThis.pitch = 0.8;
+  utterThis.rate = 1;
+  synth.speak(utterThis);
+}
+
 // loding animation
 // Show the loading animation
-
 function showLoadingAnimation() {
   document.getElementById("loading-animation").style.display = "flex";
 }
@@ -55,27 +78,3 @@ recognition.addEventListener("end", () => {
 });
 
 recognition.start();
-
-// adding the speak function for the GPT
-const synth = window.speechSynthesis;
-let voices = [];
-
-function populateVoiceList() {
-  voices = synth.getVoices();
-}
-
-populateVoiceList();
-if (speechSynthesis.onvoiceschanged !== undefined) {
-  speechSynthesis.onvoiceschanged = populateVoiceList;
-}
-
-function speak(phrase) {
-  const utterThis = new SpeechSynthesisUtterance(phrase);
-  utterThis.onend = () => {
-    recognition.start();
-  };
-  utterThis.voice = voices[3];
-  utterThis.pitch = 0.8;
-  utterThis.rate = 1;
-  synth.speak(utterThis);
-}
