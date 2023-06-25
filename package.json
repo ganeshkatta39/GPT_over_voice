@@ -1,0 +1,27 @@
+{
+  "name": "gpt_over_voice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "author": "Ganesh Katta",
+  "license": "MIT",
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "axios": "^1.4.0",
+    "dotenv": "^16.3.0",
+    "express": "^4.18.2",
+    "fluent-ffmpeg": "^2.1.2",
+    "form-data": "^4.0.0",
+    "mic": "^2.1.2",
+    "node": "^20.2.0",
+    "nodemon": "^2.0.22",
+    "openai": "^3.3.0",
+    "prompt-sync": "^4.2.0",
+    "sox": "^0.1.0"
+  }
+}
