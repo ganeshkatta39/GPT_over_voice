@@ -1,6 +1,6 @@
 async function Call_GPT(prompt) {
   try {
-    const response = await axios.post("http://localhost:3000", {
+    const response = await axios.post("https://gpt-over-voice.onrender.com/", {
       prompt: prompt,
     });
     console.log(response.data.message.content);
