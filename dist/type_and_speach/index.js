@@ -1,6 +1,6 @@
 async function Call_GPT(prompt) {
   try {
-    const response = await axios.post("http://localhost:3000", {
+    const response = await axios.post("http://localhost:3000/", {
       prompt: prompt,
     });
     console.log(response.data.message.content);
